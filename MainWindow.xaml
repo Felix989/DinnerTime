@@ -67,7 +67,8 @@
                       BorderThickness="0"
                       ItemsSource="{Binding MealHolder}"
                       DisplayMemberPath="MealType"
-                      SelectedValuePath="MealType">
+                      SelectedValuePath="MealType"
+                      x:Name="MealTypeCombobox">
             </ComboBox>
 
         </StackPanel>
@@ -92,7 +93,8 @@
                        HorizontalAlignment="Right"
                        Margin="0 0 3 3"
                        FontWeight="Bold"
-                       BorderThickness="0"></Button>
+                       BorderThickness="0"
+                       Click="GetMealType"></Button>
             </Border>
 
         </StackPanel>

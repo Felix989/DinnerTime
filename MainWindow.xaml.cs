@@ -45,5 +45,22 @@ namespace DinnerTime
         {
             Close();
         }
+
+        private void GetMealType(object sender, RoutedEventArgs e)
+        {
+
+            try
+            {
+                //SelectedDTOs.Selected.SetSelectedMeal(MealHolder[MealTypeCombobox.SelectedIndex]);
+                if (MealTypeCombobox.SelectedItem != null) {
+                    SelectedDTOs.Selected.SetSelectedMeal((MealDTO)MealTypeCombobox.SelectedItem);
+                    Console.WriteLine(SelectedDTOs.Selected.SelectedMeal);
+                }
+            }
+            catch
+            {
+                //do nothing
+            }
+        }
     }
 }
