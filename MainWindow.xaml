@@ -59,7 +59,7 @@
             <TextBlock Text="Choose a meal type!"
                        Foreground="{StaticResource Letters}"
                        FontSize="37"></TextBlock>
-
+    
             <ComboBox Margin="10 10 10 10"
                       Background="{StaticResource Letters}"
                       Foreground="{StaticResource Wallpaper}"

@@ -55,5 +55,51 @@ namespace DinnerTime.Database
             }
         }
 
+
+
+
+        public static List<FoodDTO> getEveryFood()
+        {
+
+            List<FoodDTO> foodHolder = new List<FoodDTO>();
+
+            try
+            {
+                string readString = "select * from Meal join Mealtype ON Meal.MealTypeID = Mealtype.ID";
+                using (SqlCommand command = new SqlCommand(readString, connection))
+                {
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            bool tempbool;
+
+                            if (int.Parse(reader["MealisFavourite"].ToString()) == 1) {
+                                tempbool = true;
+                            } else
+                            {
+                                tempbool = false;
+                            }
+
+                            FoodDTO meal = new FoodDTO(int.Parse(reader["ID"].ToString()),
+                                                       int.Parse(reader["MealTypeID"].ToString()),
+                                                       reader["MealName"].ToString(),
+                                                       reader["MealDescription"].ToString(),
+                                                       reader["MealMaterials"].ToString(),
+                                                       tempbool,
+                                                       reader["MealType"].ToString());
+
+                            foodHolder.Add(meal);
+                        }
+                    }
+                }
+                return foodHolder;
+            }
+            catch
+            {
+                throw;
+            }
+        }
+
     }
 }

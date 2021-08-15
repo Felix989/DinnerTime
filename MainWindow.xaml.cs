@@ -54,7 +54,8 @@ namespace DinnerTime
                 //SelectedDTOs.Selected.SetSelectedMeal(MealHolder[MealTypeCombobox.SelectedIndex]);
                 if (MealTypeCombobox.SelectedItem != null) {
                     SelectedDTOs.Selected.SetSelectedMeal((MealDTO)MealTypeCombobox.SelectedItem);
-                    Console.WriteLine(SelectedDTOs.Selected.SelectedMeal);
+                    //Console.WriteLine(SelectedDTOs.Selected.SelectedMeal);
+                    SelectedDTOs.Selected.SetSelectedFoodList();
                 }
             }
             catch
