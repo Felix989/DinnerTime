@@ -1,0 +1,108 @@
+﻿<Window x:Class="DinnerTime.Windows.MealWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DinnerTime.Windows"
+        mc:Ignorable="d"
+        Title="MealWindow" Height="450" Width="800"
+        ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen"
+        AllowsTransparency="True"
+        WindowStyle="None">
+
+    <Window.Resources>
+        <ResourceDictionary Source="/Colors/Colors.xaml" />
+    </Window.Resources>
+
+
+
+
+    <Grid Background="{StaticResource Wallpaper}">
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Row="0"
+                    Grid.Column="0"
+                    Background="{StaticResource DarkAccent}"
+                    MouseDown="StackPanel_MouseDown">
+        </StackPanel>
+
+        <StackPanel Grid.Row="0"
+                    Grid.Column="1"
+                    Background="{StaticResource DarkAccent}"
+                    MouseDown="StackPanel_MouseDown">
+
+            <Button Content="X"
+                       FontSize="23"
+                       Foreground="{StaticResource LightAccent}"
+                       Background="{StaticResource DarkAccent}"
+                       HorizontalAlignment="Right"
+                       Margin="0 0 3 3"
+                       Width="29"
+                       FontWeight="Bold"
+                       Click="Button_Click"
+                       BorderThickness="0"></Button>
+        </StackPanel>
+
+        <StackPanel Grid.Row="1"
+                    Grid.Column="0"
+                    VerticalAlignment="Center"
+                    HorizontalAlignment="Center">
+
+            <TextBlock Text="Choose your meal!"
+                       Foreground="{StaticResource Letters}"
+                       FontSize="37"></TextBlock>
+
+            <ComboBox ItemsSource="{Binding FoodList}"
+                      Margin="10 10 10 10"
+                      Background="{StaticResource Letters}"
+                      Foreground="{StaticResource Wallpaper}"
+                      FontSize="37"
+                      BorderThickness="0"
+                      DisplayMemberPath="MealName"
+                      SelectedValuePath="MealName">
+            </ComboBox>
+            
+        </StackPanel>
+
+
+
+
+
+        <StackPanel Grid.Row="1"
+                    Grid.Column="1"
+                    VerticalAlignment="Center"
+                    HorizontalAlignment="Center">
+
+        </StackPanel>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </Grid>
+</Window>

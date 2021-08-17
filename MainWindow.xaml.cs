@@ -1,5 +1,6 @@
 ﻿using DinnerTime.Database;
 using DinnerTime.DTO;
+using DinnerTime.Windows;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -56,6 +57,10 @@ namespace DinnerTime
                     SelectedDTOs.Selected.SetSelectedMeal((MealDTO)MealTypeCombobox.SelectedItem);
                     //Console.WriteLine(SelectedDTOs.Selected.SelectedMeal);
                     SelectedDTOs.Selected.SetSelectedFoodList();
+                    this.Visibility = Visibility.Hidden;
+                    MealWindow window = new MealWindow();
+                    //DataContext = window;
+                    window.Show();
                 }
             }
             catch
