@@ -98,17 +98,29 @@
 
             <TextBox Width="300"
                      Height="43"
-                     Margin="7 7 7 7">
+                     Margin="7 7 7 7"
+                     x:Name="FoodNameField"
+                     Background="{StaticResource Letters}"
+                     Foreground="{StaticResource Wallpaper}"
+                     FontSize="33">
             </TextBox> <!--name-->
 
             <TextBox Width="300"
-                     Height="43"
-                     Margin="7 7 7 7">
+                     Height="170"
+                     Margin="7 7 7 7"
+                     x:Name="FoodMaterialField"
+                     Background="{StaticResource Letters}"
+                     Foreground="{StaticResource Wallpaper}"
+                     FontSize="33">
             </TextBox> <!--materials-->
 
             <TextBox Width="300"
                      Height="43"
-                     Margin="7 7 7 7">
+                     Margin="7 7 7 7"
+                     x:Name="FoodDescriptionField"
+                     Background="{StaticResource Letters}"
+                     Foreground="{StaticResource Wallpaper}"
+                     FontSize="33">
             </TextBox> <!--description-->
 
             <StackPanel Orientation="Horizontal"
@@ -117,20 +129,26 @@
                 <Button Width="90"
                         Height="50"
                         Margin="7 7 7 7"
-                        Content="Edit"
-                        FontSize="23">
+                        Content="Update"
+                        FontSize="23"
+                        Background="{StaticResource Letters}"
+                        Foreground="{StaticResource Wallpaper}">
                 </Button>
                 <Button Width="90"
                         Height="50"
                         Margin="7 7 7 7"
                         Content="Remove"
-                        FontSize="23">
+                        FontSize="23"
+                        Background="{StaticResource LightAccent}"
+                        Foreground="{StaticResource DarkAccent}">
                 </Button>
                 <Button Width="90"
                         Height="50"
                         Margin="7 7 7 7"
                         Content="Add"
-                        FontSize="23">
+                        FontSize="23"
+                        Background="{StaticResource DarkAccent}"
+                        Foreground="{StaticResource Letters}">
                 </Button>
             </StackPanel>
 

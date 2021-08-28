@@ -63,9 +63,12 @@ namespace DinnerTime.Windows
         {
             if (FilteredMealListSelection.SelectedItem != null) {
                 FoodDTO meal = (FoodDTO)FilteredMealListSelection.SelectedItem;
-                MessageBox.Show("Name: " + meal.MealName + "\n" + 
-                                "Description: " + meal.MealDescription + "\n" +
-                                "Materials: " + meal.MealMaterial);
+                //MessageBox.Show("Name: " + meal.MealName + "\n" + 
+                //                "Description: " + meal.MealDescription + "\n" +
+                //                "Materials: " + meal.MealMaterial);
+                FoodNameField.Text = meal.MealName;
+                FoodMaterialField.Text = meal.MealMaterial;
+                FoodDescriptionField.Text = meal.MealDescription;
             }
         }
     }
