@@ -71,5 +71,20 @@ namespace DinnerTime.Windows
                 FoodDescriptionField.Text = meal.MealDescription;
             }
         }
+
+        private void UpdateFoodItem(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void RemoveFoodItem(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void AddFoodItem(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

@@ -132,7 +132,8 @@
                         Content="Update"
                         FontSize="23"
                         Background="{StaticResource Letters}"
-                        Foreground="{StaticResource Wallpaper}">
+                        Foreground="{StaticResource Wallpaper}"
+                        Click="UpdateFoodItem">
                 </Button>
                 <Button Width="90"
                         Height="50"
@@ -140,7 +141,8 @@
                         Content="Remove"
                         FontSize="23"
                         Background="{StaticResource LightAccent}"
-                        Foreground="{StaticResource DarkAccent}">
+                        Foreground="{StaticResource DarkAccent}"
+                        Click="RemoveFoodItem">
                 </Button>
                 <Button Width="90"
                         Height="50"
@@ -148,7 +150,8 @@
                         Content="Add"
                         FontSize="23"
                         Background="{StaticResource DarkAccent}"
-                        Foreground="{StaticResource Letters}">
+                        Foreground="{StaticResource Letters}"
+                        Click="AddFoodItem">
                 </Button>
             </StackPanel>
 
