@@ -125,8 +125,24 @@ namespace DinnerTime.Database
 
         public static void UpdateFoodItem(int ID, String FoodNameField, String FoodMaterialField, String FoodDescriptionField)
         {
+            try
+            {
+                string sql = "update Meal SET MealName = @FoodNameField, MealDescription = @FoodDescriptionField, MealMaterials = @FoodMaterialField where ID = @ID";
 
 
+                using (SqlCommand command = new SqlCommand(sql, connection))
+                {
+                    command.Parameters.AddWithValue("@FoodNameField", FoodNameField);
+                    command.Parameters.AddWithValue("@FoodMaterialField", FoodMaterialField);
+                    command.Parameters.AddWithValue("@FoodDescriptionField", FoodDescriptionField);
+                    command.Parameters.AddWithValue("@ID", ID);
+                    command.ExecuteNonQuery();
+                }
+            }
+            catch (Exception)
+            {
+                //
+            }
         }
 
         public static void RemoveFoodItem(int ID)

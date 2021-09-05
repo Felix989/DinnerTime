@@ -77,8 +77,21 @@ namespace DinnerTime.Windows
 
         private void UpdateFoodItem(object sender, RoutedEventArgs e)
         {
+            FoodDTO meal = (FoodDTO)FilteredMealListSelection.SelectedItem;
 
-            refresh();
+            if (FoodNameField.Text.ToString() != null &&
+                FoodMaterialField.Text.ToString() != null &&
+                FoodDescriptionField.Text.ToString() != null &&
+                meal != null)
+            {
+                dbController.UpdateFoodItem(meal.ID,
+                    FoodNameField.Text.ToString(),
+                    FoodMaterialField.Text.ToString(),
+                    FoodDescriptionField.Text.ToString());
+
+                refresh();
+                clean();
+            }
         }
 
         private void RemoveFoodItem(object sender, RoutedEventArgs e)
@@ -101,6 +114,7 @@ namespace DinnerTime.Windows
 
             }
             refresh();
+            clean();
         }
 
         private void AddFoodItem(object sender, RoutedEventArgs e)
@@ -116,6 +130,7 @@ namespace DinnerTime.Windows
                     int.Parse(SelectedDTOs.Selected.SelectedMeal.ID.ToString()));
 
                 refresh();
+                clean();
             }
         }
 
@@ -125,6 +140,12 @@ namespace DinnerTime.Windows
             FilteredMealListSelection.InvalidateArrange();
             FilteredMealListSelection.Items.Refresh();
             FilteredMealListSelection.UpdateLayout();
+        }
+
+        private void clean() {
+            FoodNameField.Text = null;
+            FoodMaterialField.Text = null;
+            FoodDescriptionField.Text = null;
         }
     }
 }
