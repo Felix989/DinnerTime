@@ -34,7 +34,10 @@ namespace DinnerTime.Windows
         private List<FoodDTO> FilterFood()
         {
             FilteredFoodList = new List<FoodDTO>();
+            FoodList = new List<FoodDTO>();
 
+
+            FoodList = dbController.getEveryFood();
             foreach (var food in FoodList)
             {
                 if (food.MealTypeID == SelectedDTOs.Selected.SelectedMeal.ID) {
@@ -75,16 +78,53 @@ namespace DinnerTime.Windows
         private void UpdateFoodItem(object sender, RoutedEventArgs e)
         {
 
+            refresh();
         }
 
         private void RemoveFoodItem(object sender, RoutedEventArgs e)
         {
+            if(FilteredMealListSelection.SelectedItem != null){
 
+                try
+                {
+                    FoodDTO meal = (FoodDTO)FilteredMealListSelection.SelectedItem;
+
+                    if (meal != null)
+                    {
+                        dbController.RemoveFoodItem(meal.ID);
+                    }
+                }
+                catch
+                {
+                    //pass
+                }
+
+            }
+            refresh();
         }
 
         private void AddFoodItem(object sender, RoutedEventArgs e)
         {
 
+            if (FoodNameField.Text.ToString() != null &&
+                FoodMaterialField.Text.ToString() != null &&
+                SelectedDTOs.Selected.SelectedMeal.ID.ToString() != null) 
+            {
+                dbController.AddFoodItem(FoodNameField.Text.ToString(),
+                    FoodMaterialField.Text.ToString(),
+                    FoodDescriptionField.Text.ToString(),
+                    int.Parse(SelectedDTOs.Selected.SelectedMeal.ID.ToString()));
+
+                refresh();
+            }
+        }
+
+        private void refresh() {
+            FilterFood();
+            FilteredMealListSelection.ItemsSource = FilteredFoodList;
+            FilteredMealListSelection.InvalidateArrange();
+            FilteredMealListSelection.Items.Refresh();
+            FilteredMealListSelection.UpdateLayout();
         }
     }
 }

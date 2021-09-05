@@ -76,7 +76,7 @@
                      Height="300"
                      Background="{StaticResource Letters}"
                      Foreground="{StaticResource Wallpaper}"
-                     ItemsSource="{Binding FilteredFoodList}"
+                     ItemsSource="{Binding FilteredFoodList, Mode=OneWay}"
                      DisplayMemberPath="MealName"
                      SelectedValuePath="MealName"
                      FontSize="23"

@@ -25,8 +25,7 @@ namespace DinnerTime.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=D:\\Programming\\GIT\\DinnerTime" +
-            "  - GIT\\DinnerTime\\Database\\Database.mdf;Integrated Security=True")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\DATA\\Programming\\GIT\\DinnerTime  - GIT\\DinnerTime\\Database\\Database.mdf;Integrated Security=True")]
         public string ConnectionString {
             get {
                 return ((string)(this["ConnectionString"]));

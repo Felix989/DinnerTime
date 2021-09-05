@@ -101,5 +101,55 @@ namespace DinnerTime.Database
             }
         }
 
+        public static void AddFoodItem(String FoodNameField, String FoodMaterialField, String FoodDescriptionField, int MealTypeID){
+            try
+            {
+                string sql = "insert into Meal(MealName, MealDescription, MealMaterials, MealTypeID, MealisFavourite) " +
+                    "VALUES(@FoodNameField, @FoodMaterialField, @FoodDescriptionField, @MealTypeID, 0)";
+
+
+                using (SqlCommand command = new SqlCommand(sql, connection))
+                {
+                    command.Parameters.AddWithValue("@FoodNameField", FoodNameField);
+                    command.Parameters.AddWithValue("@FoodMaterialField", FoodMaterialField);
+                    command.Parameters.AddWithValue("@FoodDescriptionField", FoodDescriptionField);
+                    command.Parameters.AddWithValue("@MealTypeID", MealTypeID);
+                    command.ExecuteNonQuery();
+                }
+            }
+            catch (Exception)
+            {
+                //
+            }
+        }
+
+        public static void UpdateFoodItem(int ID, String FoodNameField, String FoodMaterialField, String FoodDescriptionField)
+        {
+
+
+        }
+
+        public static void RemoveFoodItem(int ID)
+        {
+            if (ID != null)
+            {
+                try
+                {
+                    string sql = "DELETE FROM Meal WHERE ID = @ID;";
+
+                    using (SqlCommand command = new SqlCommand(sql, connection))
+                    {
+                        command.Parameters.AddWithValue("@ID", ID);
+                        command.ExecuteNonQuery();
+                    }
+                }
+                catch (Exception)
+                {
+                    //
+                }
+            }
+
+        }
+
     }
 }
