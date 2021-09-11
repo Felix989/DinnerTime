@@ -147,5 +147,13 @@ namespace DinnerTime.Windows
             FoodMaterialField.Text = null;
             FoodDescriptionField.Text = null;
         }
+
+        private void BackButton(object sender, RoutedEventArgs e)
+        {
+            this.Visibility = Visibility.Hidden;
+
+            MainWindow window = new MainWindow();
+            window.Show();
+        }
     }
 }

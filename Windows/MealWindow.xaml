@@ -39,7 +39,19 @@
         <StackPanel Grid.Row="0"
                     Grid.Column="1"
                     Background="{StaticResource DarkAccent}"
-                    MouseDown="StackPanel_MouseDown">
+                    MouseDown="StackPanel_MouseDown"
+                    Orientation="Horizontal">
+
+            <Button Content="Back"
+                       FontSize="23"
+                       Foreground="{StaticResource Letters}"
+                       Background="{StaticResource DarkAccent}"
+                       HorizontalAlignment="Right"
+                       Margin="310 0 3 0"
+                       Width="55"
+                       FontWeight="Bold"
+                       Click="BackButton"
+                       BorderThickness="0"></Button>
 
             <Button Content="X"
                        FontSize="23"
@@ -51,6 +63,7 @@
                        FontWeight="Bold"
                        Click="Button_Click"
                        BorderThickness="0"></Button>
+
         </StackPanel>
 
         <StackPanel Grid.Row="1"
@@ -111,7 +124,9 @@
                      x:Name="FoodMaterialField"
                      Background="{StaticResource Letters}"
                      Foreground="{StaticResource Wallpaper}"
-                     FontSize="33">
+                     FontSize="33"
+                     TextWrapping="Wrap"
+                     HorizontalScrollBarVisibility="Auto">
             </TextBox> <!--materials-->
 
             <TextBox Width="300"
