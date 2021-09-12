@@ -142,6 +142,9 @@ namespace DinnerTime.Windows
             FilteredMealListSelection.UpdateLayout();
         }
 
+        /// <summary>
+        /// Cleans the input fields only -> sets their value to "null".
+        /// </summary>
         private void clean() {
             FoodNameField.Text = null;
             FoodMaterialField.Text = null;

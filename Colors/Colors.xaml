@@ -6,15 +6,22 @@
 
 
 
-    <SolidColorBrush x:Key="Wallpaper" Color="#84577c" />
+    <SolidColorBrush x:Key="x" Color="#84577c" />
     <SolidColorBrush x:Key="LightAccent" Color="#c65f63" />
-    <SolidColorBrush x:Key="DarkAccent" Color="#333644" />
+    <SolidColorBrush x:Key="DarkAccent" Color="#f7e8e8" />
     <SolidColorBrush x:Key="Letters" Color="#f6e1b8" />
 
 
-
-
-
+    <SolidColorBrush x:Key="Purple" Color="#a56cc1" />
+    <SolidColorBrush x:Key="Purplish" Color="#a6acec" />
+    <SolidColorBrush x:Key="Blue" Color="#ace7ef" />
+    <SolidColorBrush x:Key="Emerald" Color="#cefff1" />
+    <SolidColorBrush x:Key="yellow" Color="#f6ea8c" />
+    <SolidColorBrush x:Key="marshmallow" Color="#cabbe9" />
+    <SolidColorBrush x:Key="pinkishbrown" Color="#e7b3b3" />
+    <SolidColorBrush x:Key="Wallpaper" Color="#3f3b3b" />
+    <SolidColorBrush x:Key="lightbrown" Color="#3f3b3b" />
+    <SolidColorBrush x:Key="orange" Color="#feb062" />
 
 
 

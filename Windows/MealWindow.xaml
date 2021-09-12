@@ -16,8 +16,6 @@
     </Window.Resources>
 
 
-
-
     <Grid Background="{StaticResource Wallpaper}">
 
         <Grid.ColumnDefinitions>
@@ -44,7 +42,7 @@
 
             <Button Content="Back"
                        FontSize="23"
-                       Foreground="{StaticResource Letters}"
+                       Foreground="{StaticResource lightbrown}"
                        Background="{StaticResource DarkAccent}"
                        HorizontalAlignment="Right"
                        Margin="310 0 3 0"
@@ -165,7 +163,7 @@
                         Content="Add"
                         FontSize="23"
                         Background="{StaticResource DarkAccent}"
-                        Foreground="{StaticResource Letters}"
+                        Foreground="{StaticResource Wallpaper}"
                         Click="AddFoodItem">
                 </Button>
             </StackPanel>

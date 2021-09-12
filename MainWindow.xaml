@@ -57,10 +57,9 @@
                     HorizontalAlignment="Center">
 
             <TextBlock Text="Choose a meal type!"
-                       Foreground="{StaticResource Letters}"
+                       Foreground="{StaticResource DarkAccent}"
                        FontSize="37"></TextBlock>
-    
-            <ComboBox Margin="10 10 10 10"
+            <ComboBox
                       Background="{StaticResource Letters}"
                       Foreground="{StaticResource Wallpaper}"
                       FontSize="37"
@@ -68,8 +67,8 @@
                       ItemsSource="{Binding MealHolder}"
                       DisplayMemberPath="MealType"
                       SelectedValuePath="MealType"
-                      x:Name="MealTypeCombobox">
-            </ComboBox>
+                      x:Name="MealTypeCombobox"
+                      Margin="7 7 7 7"/>
 
         </StackPanel>
 
@@ -84,14 +83,14 @@
 
             <Border
                 BorderBrush="{StaticResource LightAccent}"
-                BorderThickness="0 0 0 5"
+                BorderThickness="1 3 1 3"
                 CornerRadius="3 3 3 3">
                 <Button Content="Go!"
                        FontSize="37"
                        Foreground="{StaticResource LightAccent}"
                        Background="{StaticResource Wallpaper}"
                        HorizontalAlignment="Right"
-                       Margin="0 0 3 3"
+                       Margin="7 7 7 7"
                        FontWeight="Bold"
                        BorderThickness="0"
                        Click="GetMealType"></Button>
