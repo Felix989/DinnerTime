@@ -36,7 +36,7 @@ namespace DinnerTime.Windows
             FilteredFoodList = new List<FoodDTO>();
             FoodList = new List<FoodDTO>();
 
-
+            //An option needs to be implemented to list everything
             FoodList = dbController.getEveryFood();
             foreach (var food in FoodList)
             {
@@ -77,6 +77,9 @@ namespace DinnerTime.Windows
 
         private void UpdateFoodItem(object sender, RoutedEventArgs e)
         {
+
+            //Make sudden prompt about what happened -> food updated
+
             FoodDTO meal = (FoodDTO)FilteredMealListSelection.SelectedItem;
 
             if (FoodNameField.Text.ToString() != null &&
@@ -96,6 +99,10 @@ namespace DinnerTime.Windows
 
         private void RemoveFoodItem(object sender, RoutedEventArgs e)
         {
+            //are you sure, you want to remove?
+            //make a new window
+            //this function will call the window
+            //and then "sure" will call the code below:
             if(FilteredMealListSelection.SelectedItem != null){
 
                 try
@@ -119,6 +126,8 @@ namespace DinnerTime.Windows
 
         private void AddFoodItem(object sender, RoutedEventArgs e)
         {
+
+            //Make sudden prompt about what happened -> food added
 
             if (FoodNameField.Text.ToString() != null &&
                 FoodMaterialField.Text.ToString() != null &&
