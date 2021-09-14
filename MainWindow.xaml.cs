@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -61,6 +62,15 @@ namespace DinnerTime
                     MealWindow window = new MealWindow();
                     //DataContext = window;
                     window.Show();
+                }
+                else
+                {
+                    ChooseAMealType.Text = "Meal cannot be empty!";
+                    
+                    //problem: it runs in multiple threads (thread.sleep is executed first)
+                    //ChooseAMealType.Foreground = new SolidColorBrush(Colors.Orchid);
+                    //Thread.Sleep(3000);
+                    //ChooseAMealType.Foreground = new SolidColorBrush(Colors.White);
                 }
             }
             catch
