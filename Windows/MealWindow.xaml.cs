@@ -20,6 +20,7 @@ namespace DinnerTime.Windows
     {
         public List<FoodDTO> FoodList { get; set; }
         public List<FoodDTO> FilteredFoodList { get; set; }
+        public static FoodDTO ShallBeDeleted { get; set; }
 
         public MealWindow()
         {
@@ -104,15 +105,28 @@ namespace DinnerTime.Windows
             //this function will call the window
             //and then "sure" will call the code below:
             if(FilteredMealListSelection.SelectedItem != null){
-
                 try
                 {
-                    FoodDTO meal = (FoodDTO)FilteredMealListSelection.SelectedItem;
+                    //Task t = Task.Run(() => {
+                    //    ShallBeDeleted = (FoodDTO)FilteredMealListSelection.SelectedItem;
+                    //    ConfirmationDialogBox window = new ConfirmationDialogBox();
+                    //    window.Show();
+                    //});
 
-                    if (meal != null)
-                    {
-                        dbController.RemoveFoodItem(meal.ID);
-                    }
+                    //valahogy meg kellene várni, hogy befejeze, majd utána végezzen függvényhívásokat
+
+
+                    //ShowDialog MEGOLDJA!!!!!!!!!!
+                    ShallBeDeleted = (FoodDTO)FilteredMealListSelection.SelectedItem;
+                    ConfirmationDialogBox window = new ConfirmationDialogBox();
+                    window.ShowDialog();
+                    //ShallBeDeleted = new FoodDTO();
+
+
+                    //if (meal != null)
+                    //{
+                    //    dbController.RemoveFoodItem(meal.ID);
+                    //}
                 }
                 catch
                 {
@@ -162,7 +176,7 @@ namespace DinnerTime.Windows
 
         private void BackButton(object sender, RoutedEventArgs e)
         {
-            this.Visibility = Visibility.Hidden;
+            //this.Visibility = Visibility.Collapsed;
 
             MainWindow window = new MainWindow();
             window.Show();
