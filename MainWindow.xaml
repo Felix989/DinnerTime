@@ -58,7 +58,8 @@
 
             <TextBlock Text="Choose a meal type!"
                        Foreground="{StaticResource DarkAccent}"
-                       FontSize="37"></TextBlock>
+                       FontSize="37"
+                       x:Name="ChooseAMealType"></TextBlock>
             <ComboBox
                       Background="{StaticResource Letters}"
                       Foreground="{StaticResource Wallpaper}"

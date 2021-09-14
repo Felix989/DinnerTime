@@ -176,7 +176,7 @@ namespace DinnerTime.Windows
 
         private void BackButton(object sender, RoutedEventArgs e)
         {
-            //this.Visibility = Visibility.Collapsed;
+            this.Visibility = Visibility.Collapsed;
 
             MainWindow window = new MainWindow();
             window.Show();
