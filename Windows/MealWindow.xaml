@@ -69,7 +69,7 @@
                     VerticalAlignment="Center"
                     HorizontalAlignment="Center">
 
-            <TextBlock Text="Choose your meal!"
+            <TextBlock Text="Meals"
                        Foreground="{StaticResource Letters}"
                        FontSize="37"></TextBlock>
 
